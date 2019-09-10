@@ -35,7 +35,7 @@ module.exports = appInfo => {
             // 密码
             password: '123',
             // 数据库名
-            database: 'client_errors',
+            database: 'local_database',
         },
         // 是否加载到 app 上，默认开启
         app: true,

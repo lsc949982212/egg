@@ -5,5 +5,7 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index.bind(this, app));
+  router.get('/', controller.home.index);
+
+  router.get('/articles', controller.article.getByQuery);
 };
