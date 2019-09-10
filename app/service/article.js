@@ -44,11 +44,12 @@ class ArticleService extends Service {
                      followerId = '',
                      favorited = '' }) {
     const { ctx, app } = this;
-    const result = await app.mysql.query('select * from IRIS_Tx', []);
-    console.log('-----------------')
-    console.log(result)
+    /*const result = await app.mysql.query('select * from IRIS_Tx', []);
+    console.log(result)*/
+    const result = await app.mysql.query("create table if not exists IRIS_Asset_Detail(asset,subject,trigger,tx_hash,from_addr,to_addr,amount,denom,height,bft_time,source,create_time,last_update_time,primary key(subject,trigger,tx_hash,height,from_addr,to_addr))", []);
+    console.log(result);
 
-    return 'hello world';
+    return result;
     /*let articleId = null;
     let favoritedUser;
 
